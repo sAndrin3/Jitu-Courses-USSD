@@ -1,0 +1,60 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/petrolhead/Downloads/Week2 Assessment&Assignment/Week2 AssessmentAssignment/Week2 AssessmentAssignment.csproj": {}
+  },
+  "projects": {
+    "/home/petrolhead/Downloads/Week2 Assessment&Assignment/Week2 AssessmentAssignment/Week2 AssessmentAssignment.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/petrolhead/Downloads/Week2 Assessment&Assignment/Week2 AssessmentAssignment/Week2 AssessmentAssignment.csproj",
+        "projectName": "Week2 AssessmentAssignment",
+        "projectPath": "/home/petrolhead/Downloads/Week2 Assessment&Assignment/Week2 AssessmentAssignment/Week2 AssessmentAssignment.csproj",
+        "packagesPath": "/home/petrolhead/.nuget/packages/",
+        "outputPath": "/home/petrolhead/Downloads/Week2 Assessment&Assignment/Week2 AssessmentAssignment/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/petrolhead/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.408/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,3 @@
+Sandrine,User,1234567
+Jonathan,Admin,1234567
+Collins,Admin,1234567
