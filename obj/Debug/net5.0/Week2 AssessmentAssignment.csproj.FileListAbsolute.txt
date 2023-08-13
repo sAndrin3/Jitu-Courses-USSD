@@ -14,3 +14,19 @@
 /home/petrolhead/Downloads/Week2 Assessment&Assignment/Week2 AssessmentAssignment/obj/Debug/net5.0/ref/Week2 AssessmentAssignment.dll
 /home/petrolhead/Downloads/Week2 Assessment&Assignment/Week2 AssessmentAssignment/obj/Debug/net5.0/Week2 AssessmentAssignment.pdb
 /home/petrolhead/Downloads/Week2 Assessment&Assignment/Week2 AssessmentAssignment/obj/Debug/net5.0/Week2 AssessmentAssignment.genruntimeconfig.cache
+/home/petrolhead/Documents/Week2 AssessmentAssignment/bin/Debug/net5.0/Week2 AssessmentAssignment
+/home/petrolhead/Documents/Week2 AssessmentAssignment/bin/Debug/net5.0/Week2 AssessmentAssignment.deps.json
+/home/petrolhead/Documents/Week2 AssessmentAssignment/bin/Debug/net5.0/Week2 AssessmentAssignment.runtimeconfig.json
+/home/petrolhead/Documents/Week2 AssessmentAssignment/bin/Debug/net5.0/Week2 AssessmentAssignment.runtimeconfig.dev.json
+/home/petrolhead/Documents/Week2 AssessmentAssignment/bin/Debug/net5.0/Week2 AssessmentAssignment.dll
+/home/petrolhead/Documents/Week2 AssessmentAssignment/bin/Debug/net5.0/ref/Week2 AssessmentAssignment.dll
+/home/petrolhead/Documents/Week2 AssessmentAssignment/bin/Debug/net5.0/Week2 AssessmentAssignment.pdb
+/home/petrolhead/Documents/Week2 AssessmentAssignment/obj/Debug/net5.0/Week2 AssessmentAssignment.csproj.AssemblyReference.cache
+/home/petrolhead/Documents/Week2 AssessmentAssignment/obj/Debug/net5.0/Week2 AssessmentAssignment.GeneratedMSBuildEditorConfig.editorconfig
+/home/petrolhead/Documents/Week2 AssessmentAssignment/obj/Debug/net5.0/Week2 AssessmentAssignment.AssemblyInfoInputs.cache
+/home/petrolhead/Documents/Week2 AssessmentAssignment/obj/Debug/net5.0/Week2 AssessmentAssignment.AssemblyInfo.cs
+/home/petrolhead/Documents/Week2 AssessmentAssignment/obj/Debug/net5.0/Week2 AssessmentAssignment.csproj.CoreCompileInputs.cache
+/home/petrolhead/Documents/Week2 AssessmentAssignment/obj/Debug/net5.0/Week2 AssessmentAssignment.dll
+/home/petrolhead/Documents/Week2 AssessmentAssignment/obj/Debug/net5.0/ref/Week2 AssessmentAssignment.dll
+/home/petrolhead/Documents/Week2 AssessmentAssignment/obj/Debug/net5.0/Week2 AssessmentAssignment.pdb
+/home/petrolhead/Documents/Week2 AssessmentAssignment/obj/Debug/net5.0/Week2 AssessmentAssignment.genruntimeconfig.cache

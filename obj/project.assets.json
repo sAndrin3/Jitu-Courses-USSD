@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/petrolhead/Downloads/Week2 Assessment&Assignment/Week2 AssessmentAssignment/Week2 AssessmentAssignment.csproj",
+      "projectUniqueName": "/home/petrolhead/Documents/Week2 AssessmentAssignment/Week2 AssessmentAssignment.csproj",
       "projectName": "Week2 AssessmentAssignment",
-      "projectPath": "/home/petrolhead/Downloads/Week2 Assessment&Assignment/Week2 AssessmentAssignment/Week2 AssessmentAssignment.csproj",
+      "projectPath": "/home/petrolhead/Documents/Week2 AssessmentAssignment/Week2 AssessmentAssignment.csproj",
       "packagesPath": "/home/petrolhead/.nuget/packages/",
-      "outputPath": "/home/petrolhead/Downloads/Week2 Assessment&Assignment/Week2 AssessmentAssignment/obj/",
+      "outputPath": "/home/petrolhead/Documents/Week2 AssessmentAssignment/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/petrolhead/.nuget/NuGet/NuGet.Config"
