@@ -4,19 +4,6 @@ using System.IO;
 
 public class Authentication
 {
-    private void SimulateTopUp(UserDTO user, decimal amount)
-{
-    
-    // Console.WriteLine($"Simulating top-up of {amount:C} for user {user.Username}");
-}
-
-private void SavePurchaseToAnalytics(UserDTO user, Course course)
-{
-    string purchaseData = $"{course.Name},{user.Username},{course.Price}";
-    File.AppendAllText("Data/analytics.txt", purchaseData + Environment.NewLine);
-}
-
-
     public void RunAuthentication()
     {
         Courses courses = new Courses();
@@ -123,6 +110,7 @@ private void SavePurchaseToAnalytics(UserDTO user, Course course)
     }
      public void RunAdminDashboard(UserDTO authenticatedUser, Courses courses)
     {
+        Analytics analytics = new Analytics();
         while (true)
         {
             Console.WriteLine("Admin Dashboard:");
@@ -154,7 +142,7 @@ private void SavePurchaseToAnalytics(UserDTO user, Course course)
                     break;
 
                 case 5:
-                    ViewAnalytics();
+                    analytics.ViewAnalytics();
                     break;
 
                 case 6:
@@ -172,6 +160,8 @@ private void SavePurchaseToAnalytics(UserDTO user, Course course)
 
     public void RunUserDashboard(UserDTO user, Courses courses)
     {
+        Courses cs = new Courses();
+
         while (true)
         {
             Console.WriteLine($"Welcome, {user.Username}!");
@@ -189,7 +179,7 @@ private void SavePurchaseToAnalytics(UserDTO user, Course course)
                     break;
 
                 case 2:
-                    PurchaseCourse(user, courses);
+                    cs.PurchaseCourse(user, courses);
                     break;
 
                 case 3:
@@ -205,63 +195,14 @@ private void SavePurchaseToAnalytics(UserDTO user, Course course)
         }
     }
 
-    private void PurchaseCourse(UserDTO user, Courses courses)
-    {
-        Console.WriteLine("Available Courses:");
-    List<Course> availableCourses = courses.GetCourses();
-
-    if (availableCourses.Count == 0)
-    {
-        Console.WriteLine("No courses available for purchase.");
-        return;
-    }
-
-    Console.WriteLine("Select a course to purchase:");
-    for (int i = 0; i < availableCourses.Count; i++)
-    {
-        Console.WriteLine($"{i + 1}. {availableCourses[i].Name} - {availableCourses[i].Price:C}");
-    }
-
-    Console.Write("Enter the number of the course you want to purchase: ");
-    int courseNumber = int.Parse(Console.ReadLine());
-
-    if (courseNumber >= 1 && courseNumber <= availableCourses.Count)
-    {
-        Course selectedCourse = availableCourses[courseNumber - 1];
-
-       
-        decimal topUpAmount = selectedCourse.Price;
-        SimulateTopUp(user, topUpAmount);
-
-        
-        SavePurchaseToAnalytics(user, selectedCourse);
-
-        Console.WriteLine($"Congratulations! You have purchased the course: {selectedCourse.Name} for {selectedCourse.Price:C}");
-    }
-    else
-    {
-        Console.WriteLine("Invalid course selection.");
-    }
-    }
+   
 
     private void AddNewCourse(Courses courses)
     {
-        Console.Write("Enter course name: ");
-        string courseName = Console.ReadLine();
-        Console.Write("Enter course price: ");
-        decimal coursePrice = decimal.Parse(Console.ReadLine());
-
-        Course newCourse = new Course
-        {
-            Name = courseName,
-            Price = coursePrice
-        };
-
-        courses.AddCourse(newCourse);
-        Console.WriteLine("Course added successfully");
+        courses.AddCourse();
     }
 
-    private void DisplayCourses(List<Course> courses)
+     public void DisplayCourses(List<Course> courses)
     {
         Console.WriteLine("Available Courses:");
         foreach (var course in courses)
@@ -272,108 +213,15 @@ private void SavePurchaseToAnalytics(UserDTO user, Course course)
 
     private void UpdateCourse(Courses courses)
     {
-        Console.Write("Enter the name of the course to update: ");
-        string oldCourseName = Console.ReadLine();
-        Console.Write("Enter new course name: ");
-        string newCourseName = Console.ReadLine();
-        Console.Write("Enter new course price: ");
-        decimal newCoursePrice = decimal.Parse(Console.ReadLine());
-
-        Course updatedCourse = new Course
-        {
-            Name = newCourseName,
-            Price = newCoursePrice
-        };
-
-        courses.UpdateCourse(oldCourseName, updatedCourse);
-        Console.WriteLine("Course updated successfully");
+        courses.UpdateCourse();
     }
 
     private void DeleteCourse(Courses courses)
     {
-        Console.Write("Enter the name of the course to delete: ");
-        string courseName = Console.ReadLine();
-
-        courses.DeleteCourse(courseName);
-        Console.WriteLine("Course deleted successfully");
+        courses.DeleteCourse();
     }
 
- public void ViewAnalytics()
-{
-    Console.WriteLine("Analytics:");
-    Console.WriteLine("1. List of Courses and Students");
-    Console.WriteLine("2. Back to Dashboard");
-    Console.Write("Enter your choice: ");
-    int choice = int.Parse(Console.ReadLine());
-
-    switch (choice)
-    {
-        case 1:
-            DisplayCourseAndStudentAnalytics();
-            break;
-
-        case 3:
-            Console.WriteLine("Returning to Dashboard...");
-            break;
-
-        default:
-            Console.WriteLine("Invalid choice");
-            break;
-    }
-}
-
-public void DisplayCourseAndStudentAnalytics()
-{
-    Console.WriteLine("List of Courses and Students with Purchased Courses:");
-    List<string[]> analyticsData = ReadAnalyticsData();
-    Dictionary<string, List<string>> studentCourses = new Dictionary<string, List<string>>();
-
-    foreach (string[] fields in analyticsData)
-    {
-        if (fields.Length == 3)
-        {
-            string courseName = fields[0];
-            string student = fields[1];
-
-            if (!studentCourses.ContainsKey(student))
-            {
-                studentCourses[student] = new List<string>();
-            }
-
-            studentCourses[student].Add(courseName);
-        }
-    }
-
-   foreach (var kvp in studentCourses)
-    {
-        string student = kvp.Key;
-        List<string> purchasedCourses = kvp.Value;
-
-        Console.WriteLine($"Student: {student}");
-        Console.WriteLine("Courses Purchased:");
-        foreach (string course in purchasedCourses)
-        {
-            Console.WriteLine($"- {course}");
-        }
-        Console.WriteLine(); 
-    }
-}
-
-
- private List<string[]> ReadAnalyticsData()
-{
-    List<string[]> analyticsData = new List<string[]>();
-    string[] lines = File.ReadAllLines("Data/analytics.txt");
-
-    foreach (string line in lines)
-    {
-        Console.WriteLine($"Read Line: {line}");
-        string[] fields = line.Split(',');
-        analyticsData.Add(fields);
-    }
-
-    return analyticsData;
-}
+ 
 }
 
 
